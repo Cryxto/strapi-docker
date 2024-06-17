@@ -20,7 +20,10 @@ ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
 # Copy the entrypoint script
+COPY ./plugin.sh /opt/
+COPY ./plugin.ts /opt/
 COPY ./docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /opt/plugin.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # Set working directory

@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/bin/bash
 
 # Check if the app folder is empty
 if [ -z "$(ls -A /opt/app)" ]; then
@@ -15,8 +14,10 @@ if [ -z "$(ls -A /opt/app)" ]; then
     --dbname=${DATABASE_NAME} \
     --dbusername=${DATABASE_USERNAME} \
     --dbpassword=${DATABASE_PASSWORD}
-fi
-
+fi 
+npm i
+source /opt/plugin.sh
+cp /opt/plugin.ts /opt/app/config/plugins.ts
 # Build Strapi project
 npm run build
 
