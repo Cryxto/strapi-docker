@@ -16,7 +16,7 @@ RUN apk update && apk add --no-cache \
   vips-dev \
   git
 
-ARG NODE_ENV=production
+# ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
 # Copy the entrypoint script
@@ -36,4 +36,4 @@ ENTRYPOINT ["docker-entrypoint.sh"]
 EXPOSE 1337
 
 # Default command
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "develop"]
